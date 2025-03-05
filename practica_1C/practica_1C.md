@@ -53,7 +53,10 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 #### Calculo del piso de ruido en Analizador de espectros
 Para la realización de esta medición se usó la siguiente imagen:
 - Piso de ruido del analizador de espectros
-<img src="https://github.com/andrescondea/GNURADIO_LABCOMUIS_2025_1_E1B_G3/issues/7#issue-2896760141" alt="Piso de ruido del analizador de espectros" width="500">
+<img src="https://github.com/user-attachments/assets/b170819e-a4ae-4906-bb3e-684a60f0411f" alt="Noisefloor" width="500">
+
+Teniendo en cuenta que `Nf = PNref[dBm]-10log(RBW/1)` donde `PNref[dBm]=-75[dBm]` y `RBW=1[MHz]`, estos valores se muestran en la imagen anterior
+
 ### Actividad 2: Simulación de señales en GNU radio
 #### Simulación de diferentes tipos de señales:
 - Señal constante con y sin ruido
@@ -75,7 +78,7 @@ Se hizo el cálculo de una resistencia equivalente de la simulación y de la pot
 - Señal senoidal
 <img src="https://github.com/user-attachments/assets/d1f13f76-e87f-44e8-adec-b3fb9a167131" alt="1_Potenica señal senoidal" width="500">
 
-Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(P_dB/10)`, además de que se ve solo una de las dos partes del espectro. El despeje de `R` dio como resultado: `R = 7.78 [Ω]`
+Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(P_dB/10)`, además de que se ve solo una de las dos partes del espectro. El despeje de `R` dio como resultado: `R = 7.78 [Ω]`, este resultado se interpretará como una variable de normalización
 
 - Señal constante
 <img src="https://github.com/user-attachments/assets/a23bc488-bf4d-4233-9b62-287358b133bf" alt="1_Potencia señal constante" width="500">
@@ -83,8 +86,7 @@ Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(
 Dada la resistencia de `R = 7.78 [Ω]` hallada anteriormente, calculamos `P = (V^2)/R` de allí `P = (25/7.78) ≈ 3.21 [W]` y pasando dicho valor a escala logarítmica tenemos `10log(3.21)=5.07 [dB]` que era justo lo que esperábamos.
 
 ### Actividad 3: Transmisión y medición de señales con el USRP 2920
-La señal de prueba fue de tipo senoidal, se hicieron diferent![Noisefloor](https://github.com/user-attachments/assets/b170819e-a4ae-4906-bb3e-684a60f0411f)
-es variaciones de parámetros:
+La señal de prueba fue de tipo senoidal, se hicieron diferentes variaciones de parámetros:
 #### Variación de la magnitud
 GNU radio 
 
