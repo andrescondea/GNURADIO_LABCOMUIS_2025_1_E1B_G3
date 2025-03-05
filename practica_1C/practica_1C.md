@@ -52,7 +52,8 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 - Potencia de entrada máxima: +30 dBm
 #### Calculo del piso de ruido en Analizador de espectros
 Para la realización de esta medición se usó la siguiente imagen:
-
+- Piso de ruido del analizador de espectros
+<img src="https://github.com/andrescondea/GNURADIO_LABCOMUIS_2025_1_E1B_G3/issues/7#issue-2896760141" alt="Piso de ruido del analizador de espectros" width="500">
 ### Actividad 2: Simulación de señales en GNU radio
 #### Simulación de diferentes tipos de señales:
 - Señal constante con y sin ruido
