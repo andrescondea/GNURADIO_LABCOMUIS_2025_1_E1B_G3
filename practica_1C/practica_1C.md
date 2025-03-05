@@ -51,7 +51,9 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 - Ancho de banda de resolución: 1 Hz - 300 MHz en secuencia 1/3
 - Impedancia de entrada: 50 Ω
 - Potencia de entrada máxima: +30 dBm
-
+#### Medición piso de ruido en el analizador de espectros
+Para la medicion del piso de ruido en el analizador de espectros se usó la siguiente imagen de referencia:
+<img src=
 ### Actividad 2: Simulación de señales en GNU radio
 #### Simulación de diferentes tipos de señales:
 - Señal constante con y sin ruido
