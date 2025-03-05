@@ -140,7 +140,7 @@ Por otro lado, se observó gracias al uso de una antena, una señal FM alrededor
 - La relación señal a ruido de la señal FM fue de: -65 dBm -(-90 dBm) = 35 dB
 
 ### Actividad 4: Análisis de resultados y conclusiones
-
+La principal diferencia entre los modelos que se simulan y el modelo que se puede ver en el analizador de espectros puede ser las restricciones que posee un equipo en la vida real, ya que éstos trabajan en ciertos parametros que no se pueden evitar, siendo uno de estos casos la frecuencia donde a la frecuencia que se encontraron de los espectros de las señales se le adicionaba 100[MHz] ya que de otra forma el dispositivo no iba a ser capaz de entregar la señal, otro ejemplo de esto es el barrido de la frecuencia donde se debe ajustar el parámetro en rangos relativamente altos ya que valores como 20[kHz] le costaba realizar el barrido y se auto-ajustaba, además de factores como el ruido de una señal, se puede modelar en el simulador pero generalmente éstas perturbaciones se dan en el dispositivo de medición y en ciertos casos este piso no tenía menos de 20dB entre la señal por lo cual cuesta el análisis respectivo,
 ---
 ### Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
