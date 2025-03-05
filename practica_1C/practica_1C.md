@@ -1,28 +1,17 @@
 # Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
-Utilice esta [plantilla](#integrantes) para presentar sus informes de laboratorio. 
-
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos-usando-markdown)
-
-### Importante
-
-- En caso de utilizar herramientas de Inteligencia Artificial para asistencia en la redacción, análisis o cualquier otra tarea, de debe especificar en la sección de **Declaración de Originalidad y Responsabilidad** aclarando el alcance y propósito de su uso.
-- Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
-- Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
-
----
-# Práctica 1: TÍTULO PRÁCTICA
+# Práctica 1C: Mediciones de potencia y frecuencia 
 
 ### Integrantes
-- **PRIMER INTEGRANTE** - Código
-- **SEGUNDO INTEGRANTE** - Código
+- **Andrés Conde Alvarez** - 2220389
+- **Jesús Alberto Escorcia Mantilla** - 2220526
 
 Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
 
 ### Fecha
-31 de diciembre de 2030
+5 de marzo del 2025
 
 ---
 
@@ -31,41 +20,55 @@ Los autores de este informe certifican que el contenido aquí presentado es orig
 
 Asimismo, los autores asumen plena responsabilidad por la información contenida en este documento. 
 
-Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo: "Se utilizó ChatGPT para reformular secciones del texto y verificar gramática, pero el contenido técnico fue desarrollado íntegramente por los autores."]
+//Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo: "Se utilizó ChatGPT para reformular secciones del texto y verificar gramática, pero el contenido técnico fue desarrollado íntegramente por los autores."]//
 
 ---
 ## Contenido
 
 ### Resumen
-Descripción en no más de 150 palabras del contenido de la práctica. Debe ser conciso y brindar una idea clara sobre el trabajo realizado y sus conclusiones.
+En este laboratorio se midieron y analizaron parámetros clave de las comunicaciones como la potencia, el ancho de banda, relación señal a ruido (SNR) y piso de ruido. Lo anterior fue posible gracias al uso de herramientas de software, como GNU radio, y equipos de medición como el USRP 2920, el osciloscopio R&S RTB2004 y el analizador de espectros R&S FPC1000.
 
-**Palabras clave:** de 2 a 5 palabras clave. 
+**Palabras clave**: parámetros, comunicaciones, software, equipos, medición.
 
-### Introducción
-Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo: 
-- ¿Qué tan importante es la teoría de muestreo en el procesamiento de señales?
-- ¿Cuáles son los principales potenciales de GNURADIO en el laboratorio de comunicaciones?
-- ¿Qué pasa cuando se alcanza el límite de Nyquist?
-- ¿Qué tan alta debe ser la relación entre la frecuencia de muestreo y la frecuencia de la señal para visualizar la señal correctamente?
-- ¿Cuándo es importante interpolar una señal?
-- ¿Cuándo es importante diezmar una señal?
-- ¿Qué pasa cuando se asigna una frecuencia de muestreo inadecuada?
+---
+### Actividad 1: Revisión de especificaciones de los equipos
+A continuación se encuentran 5 especificaciones sobre cada uno los equipos utilizados:
+#### USRP 2920
+- Rango de frecuencia: 50 MHz - 2.2 GHz
+- Paso de frecuencia: 1 kHz
+- Rango de ganancia: 0 - 31.5 dB
+- Paso de ganancia: 0.5 dB
+- Alimentación: DC 6V, 3A
+#### Osciloscopio R&S RTB2004
+- Ancho de banda: 70 - 300 MHz
+- Frecuencia de muestreo: 2.5 Gmuestras/s
+- Impedancia de entrada: 1 MΩ
+- Resolución ADC: 10 bit
+- Sensibilidad mínima de entrada: 1 mV/div
+#### Analizador de espectros R&S FPC1000
+- Rango de frecuencias: 5 kHz - 1 GHz
+- Resolución de frecuencia: 1 Hz
+- Ancho de banda de resolución: 1 Hz - 300 MHz en secuencia 1/3
+- Impedancia de entrada: 50 Ω
+- Potencia de entrada máxima: +30 dBm
 
-### Procedimiento
-Debe basarse en las acciones efectivamente realizadas durante el laboratorio, describiendo los procesos realizados y los resultados obtenidos. Para cada práctica se pueden brindar preguntas orientadoras o pasos a seguir para establecer lo que se espera lograr/estudiar/analizar/obtener/comparar. Por ejemplo:
-- Describa los procesos realizados en el laboratorio  y los resultados obtenidos.
-- ¿Cómo se alcanza el límite de Nyquist y que pasa cuando se disminuye de este?
-- ¿Por qué al interpolar una señal en GNURADIO su frecuencia disminuye?
-- ¿Por qué al diezmar una señal en GNURADIO su frecuencia aumenta?
-- ¿Cómo se puede determinar la frecuencia máxima de una señal desde lo experimental?
-- ¿Qué le sucede a una señal de audio cuando no se respeta el teorema de Nyquist?
-- Describa las funciones logradas con el Ecualizador desarrollado con GNURadio.
+### Actividad 2: Simulación de señales en GNU radio
 
+
+### Actividad 3: Transmisión y medición de señales con el USRP 2920
+
+
+### Actividad 4: Análisis de resultados y conclusiones
+
+---
 ### Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
 
 ### Referencias
 Ejemplo de referencia:
+- «USRP-2920 Specifications». https://www.farnell.com/datasheets/3752193.pdf
+- «R&S®RTB2000 Osciloscopio digital». https://www.farnell.com/datasheets/2723043.pdf
+- «R&S®FPC1000 Analizador de espectro». https://www.farnell.com/datasheets/2342799.pdf
 
 - [Proakis, 2014] J. Proakis, M. Salehi. Fundamentals of communication systems. 2 ed. England: Pearson Education Limited, 2014. p. 164-165, 346. Chapter 5 In: [Biblioteca UIS](https://uis.primo.exlibrisgroup.com/permalink/57UIDS_INST/63p0of/cdi_askewsholts_vlebooks_9781292015699)
 
