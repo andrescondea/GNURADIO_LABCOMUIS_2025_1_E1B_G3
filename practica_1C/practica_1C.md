@@ -29,7 +29,7 @@ Uso de IA: Se usó la inteligencia articial ChatGPT para la sintaxis que requier
 En este laboratorio se midieron y analizaron parámetros clave de las comunicaciones como la potencia, el ancho de banda, relación señal a ruido (SNR) y piso de ruido. Lo anterior fue posible gracias al uso de herramientas de software, como GNU radio, y equipos de medición como el USRP 2920, el osciloscopio R&S RTB2004 y el analizador de espectros R&S FPC1000.
 
 **Palabras clave**: parámetros, comunicaciones, software, equipos, medición.
-
+hola
 ---
 ### Actividad 1: Revisión de especificaciones de los equipos
 A continuación se encuentran 5 especificaciones sobre cada uno los equipos utilizados:
