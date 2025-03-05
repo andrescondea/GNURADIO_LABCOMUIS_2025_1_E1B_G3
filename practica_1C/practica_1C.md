@@ -29,7 +29,6 @@ Uso de IA: Se usó la inteligencia articial ChatGPT para la sintaxis que requier
 En este laboratorio se midieron y analizaron parámetros clave de las comunicaciones como la potencia, el ancho de banda, relación señal a ruido (SNR) y piso de ruido. Lo anterior fue posible gracias al uso de herramientas de software, como GNU radio, y equipos de medición como el USRP 2920, el osciloscopio R&S RTB2004 y el analizador de espectros R&S FPC1000.
 
 **Palabras clave**: parámetros, comunicaciones, software, equipos, medición.
-hola
 ---
 ### Actividad 1: Revisión de especificaciones de los equipos
 A continuación se encuentran 5 especificaciones sobre cada uno los equipos utilizados:
@@ -51,6 +50,8 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 - Ancho de banda de resolución: 1 Hz - 300 MHz en secuencia 1/3
 - Impedancia de entrada: 50 Ω
 - Potencia de entrada máxima: +30 dBm
+#### Calculo del piso de ruido en Analizador de espectros
+Para la realización de esta medición se usó la siguiente imagen:
 
 ### Actividad 2: Simulación de señales en GNU radio
 #### Simulación de diferentes tipos de señales:
@@ -81,7 +82,8 @@ Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(
 Dada la resistencia de `R = 7.78 [Ω]` hallada anteriormente, calculamos `P = (V^2)/R` de allí `P = (25/7.78) ≈ 3.21 [W]` y pasando dicho valor a escala logarítmica tenemos `10log(3.21)=5.07 [dB]` que era justo lo que esperábamos.
 
 ### Actividad 3: Transmisión y medición de señales con el USRP 2920
-La señal de prueba fue de tipo senoidal, se hicieron diferentes variaciones de parámetros:
+La señal de prueba fue de tipo senoidal, se hicieron diferent![Noisefloor](https://github.com/user-attachments/assets/b170819e-a4ae-4906-bb3e-684a60f0411f)
+es variaciones de parámetros:
 #### Variación de la magnitud
 GNU radio 
 
