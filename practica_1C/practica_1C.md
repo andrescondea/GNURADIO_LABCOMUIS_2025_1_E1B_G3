@@ -55,8 +55,42 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 ### Actividad 2: Simulación de señales en GNU radio
 
 
-### Actividad 3: Transmisión y medición de señales con el USRP 2920
 
+### Actividad 3: Transmisión y medición de señales con el USRP 2920
+La señal de prueba fue de tipo senoidal, se hicieron diferentes variaciones de parámetros:
+#### Variación de la magnitud
+<img src="https://github.com/user-attachments/assets/7ac6d201-6835-4cfc-b85e-16c735ea11f4" alt="Aumento de la amplitud 1" width="400">
+<img src="https://github.com/user-attachments/assets/4296d9ae-8221-4c27-9196-fef5d0a66863" alt="Aumento de la amplitud 2" width="400">
+
+El aumento de la magnitud de la señal resultó en la saturación del analizador de espectros. Con que fuera mayor a 1 ya empezaba a saturarse.
+#### Variación de ruido
+- Señal sin ruido
+<img src="https://github.com/user-attachments/assets/1141c76f-e97f-40f4-89fe-a074ce9591be" alt="Sin ruido" width="400">
+
+- Señal con ruido
+<img src="https://github.com/user-attachments/assets/bb20d996-20c7-4d14-95b8-371b7d349122" alt="Con ruido" width="400">
+
+Se observó el aumento de ruido en la señal viendo como el piso de ruido era mayor.
+#### Adición de Offset
+<img src="https://github.com/user-attachments/assets/d27db3a4-b060-4fbb-be4c-f3674c7e2b50" alt="Adición de offset" width="400">
+
+La adición de offset resultó en la aparición de un nuevo pico de potencia.
+#### Variación de la frecuencia
+- Aumento de la frecuencia
+<img src="https://github.com/user-attachments/assets/fdedcd31-a4f9-48f3-a947-8ace0248217a" alt="Variación de la frencuencia 2" width="400">
+
+- Disminución de la frecuencia
+<img src="https://github.com/user-attachments/assets/49b68505-8448-4c73-b5b3-b2fbbf21ffcb" alt="Variación de la frecuencia 1" width="400">
+
+La variación de la frecuencia resultó en el desplazamiento de los picos de potencia. Lo anterior tiene sentido porque la transformada de Fourier de una señal senoidal son dos impulsos en ±f, siendo f su frecuencia fundamental, si se varía la frecuencia se desplazan los impulsos.
+
+No se observaron cambios al variar la fase de la señal.
+#### Espectro de una señal FM
+Por otro lado, se observó gracias al uso de una antena, una señal FM alrededor de los 95.8 MHz.
+<img src="https://github.com/user-attachments/assets/85dfbe84-75aa-4e24-8a7a-311bafd3091d" alt="Medición emisora FM" width="400">
+
+- El ancho de banda de la señal FM fue de: 200 kHz
+- La relación señal a ruido de la señal FM fue de: -65 dBm -(-90 dBm) = 35 dB
 
 ### Actividad 4: Análisis de resultados y conclusiones
 
@@ -80,6 +114,7 @@ Volver al [INICIO](#laboratorio-de-comunicaciones)
 ## Inclusión de Imágenes
 ### Imagen de referencia dentro del repositorio:
 ![Networking](my%20file/test.png)
+
 
 ### Imagen de fuente externa
 ![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
