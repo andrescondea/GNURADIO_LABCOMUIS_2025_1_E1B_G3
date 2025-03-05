@@ -29,6 +29,7 @@ Uso de IA: Se usó la inteligencia articial ChatGPT para la sintaxis que requier
 En este laboratorio se midieron y analizaron parámetros clave de las comunicaciones como la potencia, el ancho de banda, relación señal a ruido (SNR) y piso de ruido. Lo anterior fue posible gracias al uso de herramientas de software, como GNU radio, y equipos de medición como el USRP 2920, el osciloscopio R&S RTB2004 y el analizador de espectros R&S FPC1000.
 
 **Palabras clave**: parámetros, comunicaciones, software, equipos, medición.
+
 ---
 ### Actividad 1: Revisión de especificaciones de los equipos
 A continuación se encuentran 5 especificaciones sobre cada uno los equipos utilizados:
@@ -50,13 +51,11 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 - Ancho de banda de resolución: 1 Hz - 300 MHz en secuencia 1/3
 - Impedancia de entrada: 50 Ω
 - Potencia de entrada máxima: +30 dBm
-#### Calculo del piso de ruido en Analizador de espectros
+#### Cálculo del piso de ruido en Analizador de espectros
 Para la realización de esta medición se usó la siguiente imagen:
-- Piso de ruido del analizador de espectros
 <img src="https://github.com/user-attachments/assets/b170819e-a4ae-4906-bb3e-684a60f0411f" alt="Noisefloor" width="500">
 
-Teniendo en cuenta que `Nf = PNref[dBm]-10log(RBW/1)` donde `PNref[dBm]=-75[dBm]` y `RBW=1[MHz]`, estos valores se muestran en la imagen anterior
-
+Teniendo en cuenta que `Nf = PNref[dBm]-10log(RBW/1)` donde `PNref[dBm]=-75[dBm]` y `RBW=1[MHz]`. El piso de ruido del analizador de espectros fue de `Nf = -135 [dBm/Hz]`.
 
 ### Actividad 2: Simulación de señales en GNU radio
 #### Simulación de diferentes tipos de señales:
@@ -79,12 +78,16 @@ Se hizo el cálculo de una resistencia equivalente de la simulación y de la pot
 - Señal senoidal
 <img src="https://github.com/user-attachments/assets/d1f13f76-e87f-44e8-adec-b3fb9a167131" alt="1_Potenica señal senoidal" width="500">
 
-Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(P_dB/10)`, además de que se ve solo una de las dos partes del espectro. El despeje de `R` dio como resultado: `R = 7.78 [Ω]`, este resultado se interpretará como una variable de normalización
+Visualización en el analizador de espectros
+
+<img src="https://github.com/user-attachments/assets/b1d48a39-0d55-4552-97e3-0b586c542ad3" alt="1_Señal senoidal" width="400">
+
+Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(P_dB/10)`, además de que se ve solo una de las dos partes del espectro. El despeje de `R` dio como resultado: `R = 7.78 [Ω]`, este resultado se interpretará como una variable de normalización.
 
 - Señal constante
 <img src="https://github.com/user-attachments/assets/a23bc488-bf4d-4233-9b62-287358b133bf" alt="1_Potencia señal constante" width="500">
 
-Dada la resistencia de `R = 7.78 [Ω]` hallada anteriormente, calculamos `P = (V^2)/R` de allí `P = (25/7.78) ≈ 3.21 [W]` y pasando dicho valor a escala logarítmica tenemos `10log(3.21)=5.07 [dB]` que era justo lo que esperábamos.
+Dada la resistencia de `R = 7.78 [Ω]` hallada anteriormente, calculamos `P = (V^2)/R` de allí `P = (25/7.78) ≈ 3.21 [W]` y pasando dicho valor a escala logarítmica tenemos `10log(3.21) = 5.07 [dB]` que era justo lo que esperábamos.
 
 ### Actividad 3: Transmisión y medición de señales con el USRP 2920
 La señal de prueba fue de tipo senoidal, se hicieron diferentes variaciones de parámetros:
@@ -136,8 +139,8 @@ No se observaron cambios al variar la fase de la señal.
 Por otro lado, se observó gracias al uso de una antena, una señal FM alrededor de los 95.8 MHz.
 <img src="https://github.com/user-attachments/assets/85dfbe84-75aa-4e24-8a7a-311bafd3091d" alt="Medición emisora FM" width="500">
 
-- El ancho de banda de la señal FM fue de: 200 kHz
-- La relación señal a ruido de la señal FM fue de: -65 dBm -(-90 dBm) = 35 dB
+- El ancho de banda de la señal FM fue de: 200 kHz.
+- La relación señal a ruido de la señal FM fue de: -65 dBm -(-90 dBm) = 35 dB.
 
 ### Actividad 4: Análisis de resultados y conclusiones
 La principal diferencia entre los modelos que se simulan y el modelo que se puede ver en el analizador de espectros puede ser las restricciones que posee un equipo en la vida real, ya que éstos trabajan en ciertos parametros que no se pueden evitar, siendo uno de estos casos la frecuencia donde a la frecuencia que se encontraron de los espectros de las señales se le adicionaba 100[MHz] ya que de otra forma el dispositivo no iba a ser capaz de entregar la señal, otro ejemplo de esto es el barrido de la frecuencia donde se debe ajustar el parámetro en rangos relativamente altos ya que valores como 20[kHz] le costaba realizar el barrido y se auto-ajustaba, además de factores como el ruido de una señal, se puede modelar en el simulador pero generalmente éstas perturbaciones se dan en el dispositivo de medición y en ciertos casos este piso no tenía menos de 20dB entre la señal por lo cual cuesta el análisis respectivo.
