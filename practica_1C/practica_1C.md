@@ -57,6 +57,7 @@ Para la realización de esta medición se usó la siguiente imagen:
 
 Teniendo en cuenta que `Nf = PNref[dBm]-10log(RBW/1)` donde `PNref[dBm]=-75[dBm]` y `RBW=1[MHz]`, estos valores se muestran en la imagen anterior
 
+
 ### Actividad 2: Simulación de señales en GNU radio
 #### Simulación de diferentes tipos de señales:
 - Señal constante con y sin ruido
@@ -148,54 +149,6 @@ Se sintetizan los principales aportes y puntos relevantes de la práctica, evita
 - «USRP-2920 Specifications». https://www.farnell.com/datasheets/3752193.pdf
 - «R&S®RTB2000 Osciloscopio digital». https://www.farnell.com/datasheets/2723043.pdf
 - «R&S®FPC1000 Analizador de espectro». https://www.farnell.com/datasheets/2342799.pdf
-
----
-
-## Inclusión de Imágenes
-### Imagen de referencia dentro del repositorio:
-![Networking](my%20file/test.png)
-
-### Imagen de fuente externa
-![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
-
-### Uso de html para cambiar escala de la imagen
-<img src="https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png" alt="GNU Radio Logo" width="300">
-
-## Uso de Expresiones Matemáticas
-Se pueden incluir ecuaciones en el archivo `README.md` utilizando sintaxis similar a [LaTeX](https://manualdelatex.com/tutoriales/ecuaciones):
-
-### Ecuaciones en Línea
-```
-La energía de una señal exponencial es $E = \int_0^\infty A^2 e^{-2t/\tau} dt$.
-```
-**Salida renderizada:**
-La energía de una señal exponencial es $E = \int_0^\infty A^2 e^{-2t/\tau} dt$.
-
-### Ecuaciones en Bloque
-```
-$$E = \int_0^\infty A^2 e^{-2t/\tau} dt = \frac{A^2 \tau}{2}$$
-```
-**Salida renderizada**
-$$E = \int_0^\infty A^2 e^{-2t/\tau} dt = \frac{A^2 \tau}{2}$$
-
-## Creación de Tablas
-
-**Tabla 1.** Ejemplo de tabla en Markdown.
-
-| Parámetro | Valor |
-|-----------|-------|
-| Frecuencia (Hz) | 1000 |
-| Amplitud (V) | 5 |
-| Ciclo útil (%) | 50 |
-
-## Inclusión de código
-
-```python
-def hello_world():
-    print("Hello, World!")
-```
-
-También es posible resaltar texto tipo código como `print("Hello, World!")`.
 
 ---
 
