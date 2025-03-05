@@ -20,7 +20,7 @@ Los autores de este informe certifican que el contenido aquí presentado es orig
 
 Asimismo, los autores asumen plena responsabilidad por la información contenida en este documento. 
 
-//FALTA Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo: "Se utilizó ChatGPT para reformular secciones del texto y verificar gramática, pero el contenido técnico fue desarrollado íntegramente por los autores."] FALTA//
+Uso de IA: Se usó la inteligencia articial ChatGPT para la sintaxis que requiere el formato del informe.
 
 ---
 ## Contenido
@@ -68,13 +68,17 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 <img src="https://github.com/user-attachments/assets/5e2e0581-e665-4b88-bd52-bf1afd91abfc" alt="2_Señal real cuadrada con ruido" width="500">
 <img src="https://github.com/user-attachments/assets/f9683e4d-8ec9-4a86-a1b2-f15f297cd5d9" alt="2_Señal real cuadrada" width="500">
 
-#### Cálculo de potencias
-Se hizo el cálculo de potencias de dos señales:
+#### Cálculos
+Se hizo el cálculo de una resistencia equivalente de la simulación y de la potencia de una señal constante.
 - Señal senoidal
 <img src="https://github.com/user-attachments/assets/d1f13f76-e87f-44e8-adec-b3fb9a167131" alt="1_Potenica señal senoidal" width="500">
 
+Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(P_dB/10)`, además de que se ve solo una de las dos partes del espectro. El despeje de `R` dio como resultado: `R = 7.78 [Ω]`
+
 - Señal constante
 <img src="https://github.com/user-attachments/assets/a23bc488-bf4d-4233-9b62-287358b133bf" alt="1_Potencia señal constante" width="500">
+
+Dada la resistencia de `R = 7.78 [Ω]` hallada anteriormente, calculamos `P = (V^2)/R` de allí `P = (25/7.78) ≈ 3.21 [W]` y pasando dicho valor a escala logarítmica tenemos `10log(3.21)=5.07 [dB]` que era justo lo que esperábamos.
 
 ### Actividad 3: Transmisión y medición de señales con el USRP 2920
 La señal de prueba fue de tipo senoidal, se hicieron diferentes variaciones de parámetros:
@@ -109,9 +113,11 @@ Analizador de espectros
 La adición de offset resultó en la aparición de un nuevo pico de potencia.
 #### Variación de la frecuencia
 - Aumento de la frecuencia
+<img src="https://github.com/user-attachments/assets/cf7c6857-3ec8-4dfc-914e-a688ca18f406" alt="2_Señal real coseno" width="500">
 <img src="https://github.com/user-attachments/assets/fdedcd31-a4f9-48f3-a947-8ace0248217a" alt="Variación de la frencuencia 2" width="400">
 
 - Disminución de la frecuencia
+<img src="https://github.com/user-attachments/assets/61e3481c-ba8a-4541-a49f-4b878b007356" alt="2_Señal real coseno 2" width="500">
 <img src="https://github.com/user-attachments/assets/49b68505-8448-4c73-b5b3-b2fbbf21ffcb" alt="Variación de la frecuencia 1" width="400">
 
 La variación de la frecuencia resultó en el desplazamiento de los picos de potencia. Lo anterior tiene sentido porque la transformada de Fourier de una señal senoidal son dos impulsos en ±f, siendo f su frecuencia fundamental, si se varía la frecuencia se desplazan los impulsos.
