@@ -53,7 +53,7 @@ A continuación se encuentran 5 especificaciones sobre cada uno los equipos util
 - Potencia de entrada máxima: +30 dBm
 #### Cálculo del piso de ruido en Analizador de espectros
 Para la realización de esta medición se usó la siguiente imagen:
-<img src="https://github.com/user-attachments/assets/b170819e-a4ae-4906-bb3e-684a60f0411f" alt="Noisefloor" width="500">
+<img src="https://github.com/user-attachments/assets/0dd5b40b-2da8-4d93-9898-e914cf13fc83" alt="Noise floor" width="500">
 
 Teniendo en cuenta que `Nf = PNref[dBm]-10log(RBW/1)` donde `PNref[dBm]=-75[dBm]` y `RBW=1[MHz]`. El piso de ruido del analizador de espectros fue de `Nf = -135 [dBm/Hz]`.
 
