@@ -74,7 +74,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.waveform = waveform = 104
         self.source_type = source_type = 1
         self.sink_type = sink_type = 0
-        self.samp_rate = samp_rate = 25e6/16
+        self.samp_rate = samp_rate = 25e6/8
         self.phase = phase = 0
         self.offset = offset = 0
         self.noise = noise = 0
@@ -278,6 +278,20 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
             self.tab_usrp_grid_layout_0.setRowStretch(r, 1)
         for c in range(0, 1):
             self.tab_usrp_grid_layout_0.setColumnStretch(c, 1)
+        self.uhd_usrp_source_0 = uhd.usrp_source(
+            ",".join(("", '')),
+            uhd.stream_args(
+                cpu_format="fc32",
+                args='',
+                channels=list(range(0,1)),
+            ),
+        )
+        self.uhd_usrp_source_0.set_samp_rate(samp_rate)
+        self.uhd_usrp_source_0.set_time_now(uhd.time_spec(time.time()), uhd.ALL_MBOARDS)
+
+        self.uhd_usrp_source_0.set_center_freq(fc*1e6, 0)
+        self.uhd_usrp_source_0.set_antenna("RX2", 0)
+        self.uhd_usrp_source_0.set_rx_agc(True, 0)
         self.uhd_usrp_sink_0_0 = uhd.usrp_sink(
             ",".join(("", '')),
             uhd.stream_args(
@@ -294,7 +308,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.uhd_usrp_sink_0_0.set_antenna("TX/RX", 0)
         self.uhd_usrp_sink_0_0.set_gain(GTX, 0)
         self.qtgui_time_sink_x_0_0 = qtgui.time_sink_c(
-            5000, #size
+            1024, #size
             samp_rate, #samp_rate
             "", #name
             1, #number of inputs
@@ -349,7 +363,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         for c in range(2, 4):
             self.tab_plots_grid_layout_0.setColumnStretch(c, 1)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
-            5000, #size
+            1024, #size
             samp_rate, #samp_rate
             "", #name
             1, #number of inputs
@@ -545,10 +559,10 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_selector_1, 1), (self.audio_sink_0, 0))
         self.connect((self.blocks_selector_1, 0), (self.blocks_null_sink_0, 0))
         self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_float_to_complex_0_0_0, 0))
-        self.connect((self.channels_channel_model_0, 0), (self.band_pass_filter_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.qtgui_freq_sink_x_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.qtgui_time_sink_x_0, 0))
         self.connect((self.channels_channel_model_0, 0), (self.uhd_usrp_sink_0_0, 0))
+        self.connect((self.uhd_usrp_source_0, 0), (self.band_pass_filter_0, 0))
 
 
     def closeEvent(self, event):
@@ -598,6 +612,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_0_0.set_samp_rate(self.samp_rate)
         self.uhd_usrp_sink_0_0.set_samp_rate(self.samp_rate)
+        self.uhd_usrp_source_0.set_samp_rate(self.samp_rate)
 
     def get_phase(self):
         return self.phase
@@ -636,6 +651,7 @@ class filters_flowgraph(gr.top_block, Qt.QWidget):
     def set_fc(self, fc):
         self.fc = fc
         self.uhd_usrp_sink_0_0.set_center_freq(self.fc*1e6, 0)
+        self.uhd_usrp_source_0.set_center_freq(self.fc*1e6, 0)
 
     def get_f_min(self):
         return self.f_min
