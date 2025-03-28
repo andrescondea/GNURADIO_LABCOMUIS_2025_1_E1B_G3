@@ -147,6 +147,56 @@ Al aumentar la frecuencia de portadora, nos estabamos acercando al límite impue
 Cuando se superó el ancho de banda del osciloscopio, la señal simplemente no fue reconocida por este.
 
 ### Actividad 3: Fenómenos de canal en el analizador de espectro
+- Señal dientes de sierra
+<img src="https://github.com/user-attachments/assets/fbb2f4a7-e68c-455d-b795-a5dc8b36aefd" alt="Señal dientes de Sierra" width="460">
+<img src="https://github.com/user-attachments/assets/0c0a041d-123a-480f-ba4d-0dd572fb424f" alt="Señal dientes de Sierra" width="340">
+
+La señal transmitida se pudo visualizar correctamente.
+
+- Señal coseno
+<img src="https://github.com/user-attachments/assets/2e5703f6-9c42-4324-8bb8-1a6f50aab785" alt="Señal coseno" width="460">
+<img src="https://github.com/user-attachments/assets/5c7e0dc9-19d4-4e25-a851-e03b7908b04c" alt="Señal sin ruido" width="340">
+
+<img src="https://github.com/user-attachments/assets/3991af13-cafa-441e-a250-7a2656beca78" alt="Señal coseno con ruido" width="460">
+<img src="https://github.com/user-attachments/assets/cfaf32e1-a5b1-44fc-b80e-f6ad2cecaf5d" alt="Señal con ruido" width="340">
+
+Se pudo ver el efecto del ruido, el piso de ruido aumentó. La señal transmitida se podía distinguir.
+
+- Señal cuadrada
+<img src="https://github.com/user-attachments/assets/375db050-4e79-425b-954c-f9b74131ac17" alt="Señal cuadrada" width="600">
+
+<img src="https://github.com/user-attachments/assets/4dd57b76-7274-4b2a-996c-4a1868188d28" alt="Señal cuadrada" width="400">
+<img src="https://github.com/user-attachments/assets/5a92794a-8c45-4d03-a38e-84b949bb44c2" alt="Señal cuadrada con ruido" width="400">
+
+Cambiando la señal de nuevo se vio el efecto del ruido, el piso de ruido se incrementó pero la señal era reconocible.
+
+#### Efecto de la frecuencia de portadora:
+<img src="https://github.com/user-attachments/assets/3c4198d7-e371-4cd0-aa98-95d1c3ca3f59" alt="Señal coseno a 1000 MHz" width="460">
+<img src="https://github.com/user-attachments/assets/49405053-8213-42aa-867d-fb59bc2acee5" alt="Señal coseno a 1000 MHz" width="340">
+
+<img src="https://github.com/user-attachments/assets/6e60d575-243f-4ae5-a1ae-38bbe002deb4" alt="Señal coseno a 1250 MHz" width="460">
+<img src="https://github.com/user-attachments/assets/1a6eed68-eb6d-4dee-902f-c67b9361e0cc" alt="Señal coseno a 1250 MHz" width="340">
+
+<img src="https://github.com/user-attachments/assets/fe13f13e-e5de-4918-960e-ff132cb9a723" alt="Señal coseno a 2200 MHz" width="460">
+<img src="https://github.com/user-attachments/assets/23583d6c-341d-43cb-bf54-6e31b399dd61" alt="Señal coseno a 2200 MHz" width="340">
+
+Aún a la máxima frecuencia de portadora disponible, el espectro era visible. En el analizador de espectros utilizado era posible visualizar la señal a dichos rangos de frecuencia.
+
+#### Efecto de la transmisión por cables de diferentes longitudes
+Se transmitió una señal senoidal y se vio el efecto de la transmisión por cables de diferentes longitudes.
+<img src="https://github.com/user-attachments/assets/3843ea8e-70a2-4d78-9fcf-055f71246360" alt="Señal seno" width="600">
+
+- Cable corto
+<img src="https://github.com/user-attachments/assets/5619d50c-8067-4f94-9e70-2b1747bcbdbe" alt="Señal cable corto" width="400">
+
+En este caso la potencia de la señal fue de -33 dBm.
+
+- Cable largo
+<img src="https://github.com/user-attachments/assets/4db5a0f7-8596-4308-8c46-6889fa356e90" alt="Señal cable largo" width="400">
+
+En este caso la potencia de la señal fue de -53 dBm.
+
+Por lo anterior, podemos evidenciar una pérdida de potencia de 20 dBm entre el cable corto y el largo. La señal se atenua más conforme se transmite por un cable de mayor longitud.
 
 ### Análisis de resultados 
 La principal diferencia entre los modelos que se simulan y el modelo que se puede ver en el analizador de espectros son las restricciones que posee un equipo en la vida real, ya que éstos trabajan en ciertos parámetros que no se pueden evitar, siendo uno de estos casos la frecuencia donde a la frecuencia que se encontraron de los espectros de las señales se le adicionaba 100[MHz] ya que de otra forma el dispositivo no iba a ser capaz de entregar la señal, otro ejemplo de esto es el barrido de la frecuencia donde se debe ajustar el parámetro en rangos relativamente altos ya que valores como 20[kHz] le costaba realizar el barrido y se auto-ajustaba, además de factores como el ruido de una señal, se puede modelar en el simulador pero generalmente éstas perturbaciones se dan en el dispositivo de medición y en ciertos casos este piso no tenía menos de 20dB entre la señal y el mismo, por lo cual costaba el análisis respectivo.
