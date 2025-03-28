@@ -1,7 +1,7 @@
 # Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
-# Práctica 1C: Mediciones de potencia y frecuencia 
+# Práctica 2A: Modelo de canal
 
 ### Integrantes
 - **Andrés Conde Alvarez** - 2220389
@@ -11,7 +11,7 @@ Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones
 Universidad Industrial de Santander
 
 ### Fecha
-5 de marzo del 2025
+28 de marzo del 2025
 
 ---
 
@@ -26,38 +26,15 @@ Uso de IA: Se usó la inteligencia articial ChatGPT para la sintaxis que requier
 ## Contenido
 
 ### Resumen
-En este laboratorio se midieron y analizaron parámetros clave de las comunicaciones como la potencia, el ancho de banda, relación señal a ruido (SNR) y piso de ruido. Lo anterior fue posible gracias al uso de herramientas de software, como GNU radio, y equipos de medición como el USRP 2920, el osciloscopio R&S RTB2004 y el analizador de espectros R&S FPC1000.
+En este laboratorio se observaron fenómenos de canal de diferentes formas; esto es, por medio de la simulación con GNU Radio y visualización tanto en el osciloscopio como en el analizador de espectros. En el proceso se observó el filtrado de las señales y el efecto de su forma de transmisión (alámbrica).
 
-**Palabras clave**: parámetros, comunicaciones, software, equipos, medición.
+**Palabras clave**: fenómenos, canal, simulación, filtrado, transmisión.
 
 ---
-### Actividad 1: Revisión de especificaciones de los equipos
+### Actividad 1: Actividades de simulación de canal en GNU Radio
 A continuación se encuentran 5 especificaciones sobre cada uno los equipos utilizados:
-#### USRP 2920
-- Rango de frecuencia: 50 MHz - 2.2 GHz
-- Paso de frecuencia: 1 kHz
-- Rango de ganancia: 0 - 31.5 dB
-- Paso de ganancia: 0.5 dB
-- Alimentación: DC 6V, 3A
-#### Osciloscopio R&S RTB2004
-- Ancho de banda: 70 - 300 MHz
-- Frecuencia de muestreo: 2.5 Gmuestras/s
-- Impedancia de entrada: 1 MΩ
-- Resolución ADC: 10 bit
-- Sensibilidad mínima de entrada: 1 mV/div
-#### Analizador de espectros R&S FPC1000
-- Rango de frecuencias: 5 kHz - 1 GHz
-- Resolución de frecuencia: 1 Hz
-- Ancho de banda de resolución: 1 Hz - 300 MHz en secuencia 1/3
-- Impedancia de entrada: 50 Ω
-- Potencia de entrada máxima: +30 dBm
-#### Cálculo del piso de ruido en Analizador de espectros
-Para la realización de esta medición se usó la siguiente imagen:
-<img src="https://github.com/user-attachments/assets/0dd5b40b-2da8-4d93-9898-e914cf13fc83" alt="Noise floor" width="500">
 
-Teniendo en cuenta que `Nf = PNref[dBm]-10log(RBW/1)` donde `PNref[dBm]=-75[dBm]` y `RBW=1[MHz]`. El piso de ruido del analizador de espectros fue de `Nf = -135 [dBm/Hz]`.
-
-### Actividad 2: Simulación de señales en GNU radio
+### Actividad 2: Fenómenos de canal en el osciloscopio
 #### Simulación de diferentes tipos de señales:
 - Señal constante con y sin ruido
 <img src="https://github.com/user-attachments/assets/3520eddf-33db-47e2-9984-aca9c7c6c072" alt="2_Señal constante con ruido" width="500">
@@ -89,7 +66,7 @@ Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(
 
 Dada la resistencia de `R = 7.78 [Ω]` hallada anteriormente, calculamos `P = (V^2)/R` de allí `P = (25/7.78) ≈ 3.21 [W]` y pasando dicho valor a escala logarítmica tenemos `10log(3.21) = 5.07 [dB]` que era justo lo que esperábamos.
 
-### Actividad 3: Transmisión y medición de señales con el USRP 2920
+### Actividad 3: Fenómenos de canal en el analizador de espectro
 La señal de prueba fue de tipo senoidal, se hicieron diferentes variaciones de parámetros:
 #### Variación de la magnitud
 GNU radio 
