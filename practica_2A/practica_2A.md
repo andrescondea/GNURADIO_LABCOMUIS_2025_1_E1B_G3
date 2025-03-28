@@ -32,39 +32,47 @@ En este laboratorio se observaron fenómenos de canal de diferentes formas; esto
 
 ---
 ### Actividad 1: Actividades de simulación de canal en GNU Radio
-A continuación se encuentran 5 especificaciones sobre cada uno los equipos utilizados:
+- Señal senoidal
+<img src="https://github.com/user-attachments/assets/f074226f-9bdc-4dbc-b4de-87398bf1676c" alt="Senoidal recibida sin ruido" width="500">
+
+Se puede observar la señal de tipo senoidal recibida. Está pasando por el filtro. 
+
+<img src="https://github.com/user-attachments/assets/1e26dbf9-2d25-4c56-a88f-460f0c0e147b" alt="Senoidal cortada por frecuencia inferior" width="500">
+<img src="https://github.com/user-attachments/assets/a842445b-cdb7-41ac-bd37-a041ff5410b6" alt="Senoidal cortada por la frecuencia superior" width="500">
+
+Cuando la frecuencia de la señal tenía un valor cercano a la de los límites del filtro, la señal recibida se hacía menos visible; lo cual se evidencia tanto en el dominio del tiempo como en el dominio de la frecuencia con la disminución de la amplitud y potencia respectivamente.
+
+Efecto del ruido:
+
+<img src="https://github.com/user-attachments/assets/a83a1cab-4e28-41e2-9672-89cf905988e1" alt="Senoidal con mucho ruido frecuencia" width="500">
+<img src="https://github.com/user-attachments/assets/194077e0-7ac4-41b8-b032-d443e7e5b250" alt="Senoidal con mucho ruido tiempo" width="500">
+
+Al agregar ruido a la señal transmitida, esta se volvía indistinguible en el dominio del tiempo; sin embargo, gracias al filtro, la señal recibida fue reconocible.
+
+- Señal cuadrada
+<img src="https://github.com/user-attachments/assets/4b158cf5-3d13-41ba-b27d-3b5425cf384a" alt="Señal cuadrada" width="500">
+
+Al transmitir una señal cuadrada se vieron los armónicos en el dominio de la frecuencia.
+
+<img src="https://github.com/user-attachments/assets/5a7ce911-c926-412c-931c-73db5f046765" alt="Señal cuadrada con mucho ruido" width="500">
+<img src="https://github.com/user-attachments/assets/5797da29-f0f1-423c-94f1-73d792d1c580" alt="Señal cuadrada con mucho ruido y otro armónico" width="500">
+
+De nuevo se agregó ruido, el cual fue filtrado. Por otra parte, modificando los límites del filtro se hizo que pasarán más armónicos de la señal; no obstante, para las simulaciones mostradas, la forma de señal cuadrada no fue reconocible.
+
+- Señal tipo WAV
+<img src="https://github.com/user-attachments/assets/e5639ac6-c742-4eac-912b-86d280cec3a9" alt="Prueba con WAV tiempo" width="500">
+<img src="https://github.com/user-attachments/assets/6dc552e1-e627-4ea1-8e14-ae58f8d55884" alt="Prueba con WAV frecuencia" width="500">
+
+En el caso de la señal tipo WAV no se pudo distinguir la señal recibida en el dominio tiempo pero sí en el dominio de la frencuecia, esto puede deberse a que en el tiempo la magnitud sea muy pequeña.
+
+Efecto del ruido:
+
+<img src="https://github.com/user-attachments/assets/d218edd0-240e-4bed-b6c5-a704b3de9a3b" alt="Prueba con ruido en WAV tiempo" width="500">
+<img src="https://github.com/user-attachments/assets/b5a43b62-c20a-4ed8-bd8f-acf78c8db84d" alt="WAV con poco ruido frecuencia" width="500">
+
+Nuevamente las afectaciones del ruido en la señal transmitida son contrarestadas por el filtro y ello se visualiza en la señal recibida.
 
 ### Actividad 2: Fenómenos de canal en el osciloscopio
-#### Simulación de diferentes tipos de señales:
-- Señal constante con y sin ruido
-<img src="https://github.com/user-attachments/assets/3520eddf-33db-47e2-9984-aca9c7c6c072" alt="2_Señal constante con ruido" width="500">
-<img src="https://github.com/user-attachments/assets/c11ef2d0-1242-40d6-8a22-64acf6311aca" alt="1_Señal constante" width="500">
-
-- Señal senoidal
-<img src="https://github.com/user-attachments/assets/57e97618-a2b5-47b6-a21a-61899a73944b" alt="1_Señal senoidal" width="500">
-
-- Señal cuadrada compleja 
-<img src="https://github.com/user-attachments/assets/a206d15c-dc59-4aae-a8e5-9c0be07480ce" alt="2_Señal compleja cuadrada" width="500">
-
-- Señal cuadrada real con y sin ruido
-<img src="https://github.com/user-attachments/assets/5e2e0581-e665-4b88-bd52-bf1afd91abfc" alt="2_Señal real cuadrada con ruido" width="500">
-<img src="https://github.com/user-attachments/assets/f9683e4d-8ec9-4a86-a1b2-f15f297cd5d9" alt="2_Señal real cuadrada" width="500">
-
-#### Cálculos
-Se hizo el cálculo de una resistencia equivalente de la simulación y de la potencia de una señal constante.
-- Señal senoidal
-<img src="https://github.com/user-attachments/assets/d1f13f76-e87f-44e8-adec-b3fb9a167131" alt="1_Potenica señal senoidal" width="500">
-
-Visualización en el analizador de espectros
-
-<img src="https://github.com/user-attachments/assets/b1d48a39-0d55-4552-97e3-0b586c542ad3" alt="1_Señal senoidal" width="400">
-
-Teniendo en cuenta que `P = (V_rms^2)/R` donde `V_rms = V_p/sqrt(2)` y `P = 10^(P_dB/10)`, además de que se ve solo una de las dos partes del espectro. El despeje de `R` dio como resultado: `R = 7.78 [Ω]`, este resultado se interpretará como una variable de normalización.
-
-- Señal constante
-<img src="https://github.com/user-attachments/assets/a23bc488-bf4d-4233-9b62-287358b133bf" alt="1_Potencia señal constante" width="500">
-
-Dada la resistencia de `R = 7.78 [Ω]` hallada anteriormente, calculamos `P = (V^2)/R` de allí `P = (25/7.78) ≈ 3.21 [W]` y pasando dicho valor a escala logarítmica tenemos `10log(3.21) = 5.07 [dB]` que era justo lo que esperábamos.
 
 ### Actividad 3: Fenómenos de canal en el analizador de espectro
 La señal de prueba fue de tipo senoidal, se hicieron diferentes variaciones de parámetros:
